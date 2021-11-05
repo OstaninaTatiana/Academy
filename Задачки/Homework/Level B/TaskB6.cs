@@ -16,11 +16,24 @@ namespace Homework
     // Reverser("reverse letters") ==> "esrever srettel".
     public static class TaskB6
     {
+        static string rev(string s)
+        {
+            string res = "";
+            for (int i = 0; i < s.Length; i++)
+                res = s[i] + res;
+            return res;
+        }
+
         public static string Reverser(string s)
         {
-            // Здесь необходимо написать код.
-
-            return "";
+            string res = "";
+            string[] a = s.Split();
+            for (int i = 0; i < a.Length; i++)
+            {
+                res += rev(a[i]) + " ";
+            }
+            res = res.Substring(0, res.Length - 1);
+            return res;
         }
     }
 }

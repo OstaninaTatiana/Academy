@@ -21,11 +21,37 @@ namespace Homework
     // ++++++++++
     public static class TaskB5
     {
+        static int find_max_lengt(List<string> text)
+        {
+            int max = 0;
+            foreach (string i in text)
+            {
+                if (i.Length > max)
+                    max = i.Length;
+            }
+            return max;
+        }
+
+
         public static string Frame(List<string> text, char symbol)
         {
             // Здесь необходимо написать код.
-
-            return "";
+            int len = find_max_lengt(text) + 4;
+            string s="";
+            for (int i = 0; i < len; i++)
+                s += symbol;
+            s += "\n";
+            foreach (string i in text)
+            {
+                s += symbol + " ";
+                s += i;
+                for (int k = 0; k < len - i.Length - 4; k++)
+                    s += " ";
+                s += " " + symbol + "\n";
+            }
+            for (int i = 0; i < len; i++)
+                s += symbol;
+            return s;
         }
     }
 }

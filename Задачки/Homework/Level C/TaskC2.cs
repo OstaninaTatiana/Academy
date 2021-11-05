@@ -21,9 +21,19 @@ namespace Homework
     {
         public static List<int> ChangeCent(double money)
         {
-            // Здесь необходимо написать код.
+            List<int> a = new List<int>();
+            for (int i = 0; i < 4; i++)
+                a.Add(i);
+            int m = Convert.ToInt32(Math.Truncate(money));
+            a[3] = m / 25;
+            m = m % 25;
+            a[2] = m / 10;
+            m = m % 10;
+            a[1] = m / 5;
+            m = m % 5;
+            a[0] = m;
 
-            return null;
+            return a;
         }
     }
 }

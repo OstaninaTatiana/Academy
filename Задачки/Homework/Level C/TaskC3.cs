@@ -24,9 +24,18 @@ namespace Homework
     {
         public static int Movie(int card, int ticket, double perc)
         {
-            // Здесь необходимо написать код.
-
-            return 0;
+            int k = 0;
+            double s = ticket;
+            double sum1 = 0;
+            double sum2 = card;
+            while (sum2 >= sum1)
+            {
+                k += 1;
+                sum1 += ticket;
+                sum2 += s;
+                s *= perc;
+            }
+            return k-1;
         }
     }
 }

@@ -25,11 +25,31 @@ namespace Homework
     // Ребенок 9 садится за стол 6 (трое по 2 яблока). Ребенок 10 садится за стол 5 (трое по 1 и 2/3 яблока).
     public static class TaskC1
     {
+        public static int get_table(List<int> tables)
+        {
+            double max = 0;
+            int res = 0;
+            for (int i = 1; i <= 6; i++)
+            {
+                if (Convert.ToDouble(i) / (tables[i - 1] + 1) > max)
+                {
+                    res = i - 1;
+                    max = Convert.ToDouble(i) / (tables[i - 1] + 1);
+                }
+            }
+            return res;
+        }
+
         public static List<int> AppleShare(int N)
         {
-            // Здесь необходимо написать код.
-
-            return null;
+            List<int> res = new List<int>();
+            for (int i=0; i < 6; i++)
+                res.Add(0);
+            for (int i=0; i < N; i++)
+            {
+                res[get_table(res)] += 1;
+            }
+            return res;
         }
     }
 }

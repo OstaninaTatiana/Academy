@@ -18,11 +18,29 @@ namespace Homework
     // VeryEven(222) => true -> 2 + 2 + 2 = 8 => 8 - четное.
     public static class TaskA2
     {
+        static int sum(int n)
+        {
+            int s = 0;
+            while (n > 0)
+            {
+                s += n % 10;
+                n /= 10;
+            }
+            if (s < 10)
+                return s;
+            else
+                return sum(s);
+        }
+        
+        
         public static bool VeryEven(int number)
         {
             // Здесь необходимо написать код.
-
-            return false;
+            
+            if (sum(number) % 2 == 1)
+                return false;
+            else
+                return true;
         }
     }
 }
