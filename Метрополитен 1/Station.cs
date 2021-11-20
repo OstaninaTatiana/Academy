@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 public class Station
 {
-    string name;
-    string color;
-    Line line;
-    bool isWheelchairAccassable;
-    bool hasParkAndRide;
-    bool hasNearbyCableCar;
-    List<Station> transfers;
+    protected string name;
+    protected string color;
+    protected Line line;
+    protected bool isWheelchairAccassable;
+    protected bool hasParkAndRide;
+    protected bool hasNearbyCableCar;
+    protected List<Station> transfers;
 
 	public Station(string name, string color)
     {
@@ -22,7 +22,8 @@ public class Station
     {
         this.name = name;
         this.color = color;
-        this.transfers = transfer;
+        foreach (Station t in transfer)
+        { this.transfers.Add(t); }
     }
 
     public string GetName()
