@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,8 +39,18 @@ namespace WpfApp3
         private void Shuffle()
         {
             Random random = new Random();
-            int[] s = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            int index, temp;
+            string[] s = new string[] { (string)_0.Content, 
+                                  (string)_1.Content,
+                                  (string)_2.Content,
+                                  (string)_3.Content,
+                                  (string)_4.Content,
+                                  (string)_5.Content,
+                                  (string)_6.Content,
+                                  (string)_7.Content,
+                                  (string)_8.Content,
+                                  (string)_9.Content };
+            int index;
+            string temp;
             for (int i = 0; i < 10; i++)
             {
                 index = random.Next(0, 9);
@@ -76,11 +86,22 @@ namespace WpfApp3
             Random random = new Random();
             Shuffle();
             Label.Text += ((Button)sender).Content;
+            Label.Margin = new Thickness(10 + random.Next(-5, 5), 10 + random.Next(-5, 5), 0, 0);
         }
 
         private void clean(object sender, RoutedEventArgs e)
         {
             Label.Text = "";
+            _0.Content = "";
+            _1.Content = "";
+            _2.Content = "";
+            _3.Content = "";
+            _4.Content = "";
+            _5.Content = "";
+            _6.Content = "";
+            _7.Content = "";
+            _8.Content = "";
+            _9.Content = "";
         }
 
         private void send(object sender, RoutedEventArgs e)
