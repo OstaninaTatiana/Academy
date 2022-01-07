@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "WpfApp_Практика/1.0.0": {
+        "runtime": {
+          "WpfApp_Практика.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WpfApp_Практика/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
